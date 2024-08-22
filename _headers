@@ -1,0 +1,2 @@
+/*
+  Content-Security-Policy: frame-src 'self' drive.google.com docs.google.com
