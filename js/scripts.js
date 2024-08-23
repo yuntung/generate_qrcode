@@ -1,19 +1,32 @@
 const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".nav-menu");
+        const navMenu = document.querySelector(".nav-menu");
+        const navLinks = document.querySelectorAll(".nav-link");
 
-    function toggleMenu() {
-      document.getElementById('menu').classList.toggle('active');
-  }
+        function toggleMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
 
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-      navMenu.classList.toggle("active");
-    });
+        hamburger.addEventListener("click", toggleMenu);
 
-    document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      navMenu.classList.remove("active");
-    }));
+        navLinks.forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.stopPropagation(); // 防止事件冒泡
+                toggleMenu();
+            });
+        });
+
+        // 防止點擊菜單內容時關閉菜單
+        navMenu.addEventListener("click", (e) => {
+            e.stopPropagation();
+        });
+
+        // 點擊頁面其他地方時關閉菜單
+        document.addEventListener("click", (e) => {
+            if (navMenu.classList.contains("active") && e.target !== hamburger) {
+                toggleMenu();
+            }
+        });
 
 // // PDF.js 的 worker
 // pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.worker.min.js';
