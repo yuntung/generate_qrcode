@@ -13,14 +13,15 @@ body, html {
 .container {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 90vh; /* 減少高度 */
   margin: 0 auto;
   text-align: center;
   overflow: hidden;
 }
 .product-image {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   opacity: 0.7; 
 }
 .overlay-text {
@@ -82,7 +83,7 @@ main {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 50px 0;
+  padding: 0; /* 移除上下內邊距 */
   margin-top: 70px;
 }
 h1 {
@@ -162,6 +163,7 @@ h2 {
   justify-content: center;
   align-items: center;
   background-color: #f0f0f0;
+  margin-top: -50px; /* 添加負的上邊距 */
 }
 .certificate-frame {
   width: 80%;
