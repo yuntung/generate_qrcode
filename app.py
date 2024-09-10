@@ -46,7 +46,7 @@ def create_qr_with_centered_logo(url, logo_path, output_path, qr_color="black", 
 
 
 url = "https://master--kingflexcode.netlify.app/"
-logo_path = "/Users/yuntungshih/Desktop/KingFlex Work/KING_FLEX_Horizontal.png"  # 請替換為實際的logo路徑
+logo_path = "/Users/yuntungshih/Desktop/qr_logo.png"  # 請替換為實際的logo路徑
 output_path = "qr_code_with_centered_logo.png"
 
 create_qr_with_centered_logo(url, logo_path, output_path)
